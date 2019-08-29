@@ -6,7 +6,7 @@ import {
   createAppContainer,
   createDrawerNavigator
 } from 'react-navigation';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 import CitiesScreen from '../screens/CitiesScreen';
@@ -63,7 +63,7 @@ const tabScreenConfig = {
     navigationOptions: {
       tabBarIcon: tabInfo => {
         return (
-          <Ionicons name="city" size={25} color={tabInfo.tintColor} />
+          <MaterialIcons name="location-city" size={25} color={tabInfo.tintColor} />
         );
       },
       tabBarColor: Colors.primaryColor,
