@@ -8,7 +8,7 @@ import {
   TouchableNativeFeedback
 } from 'react-native';
 
-const CategoryGridTile = props => {
+const CityGridTile = props => {
   let TouchableCmp = TouchableOpacity;
 
   if (Platform.OS === 'android' && Platform.Version >= 21) {
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CategoryGridTile;
+export default CityGridTile;

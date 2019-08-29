@@ -29,7 +29,7 @@ export const PLACES = [
     false
   ),
 
-  new Meal(
+  new Place(
     'p2',
     'c1',
     'Helsinki Cathedral',
@@ -47,7 +47,7 @@ export const PLACES = [
     false
   ),
 
-  new Meal(
+  new Place(
     'p3',
     'c1',
     'Kiasma',
@@ -65,7 +65,7 @@ export const PLACES = [
     false
   ),
 
-  new Meal(
+  new Place(
     'p4',
     'c2',
     'Eiffel Tower',
@@ -83,7 +83,7 @@ export const PLACES = [
     true
   ),
 
-  new Meal(
+  new Place(
     'p5',
     'c2',
     'Louvre Museum',
@@ -101,7 +101,7 @@ export const PLACES = [
     false
   ),
 
-  new Meal(
+  new Place(
     'p6',
     'c3',
     'Houses of Parliament & Big Ben',
@@ -119,7 +119,7 @@ export const PLACES = [
     true
   ),
 
-  new Meal(
+  new Place(
     'p7',
     'c3',
     'Buckingham Palace',
@@ -137,7 +137,7 @@ export const PLACES = [
     false
   ),
 
-  new Meal(
+  new Place(
     'p8',
     'c4',
     'The Colosseum',
@@ -155,7 +155,7 @@ export const PLACES = [
     true
   ),
 
-  new Meal(
+  new Place(
     'p9',
     'c4',
     'The Pantheon',

@@ -3,20 +3,20 @@ import { FlatList } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import HeaderButton from '../components/HeaderButton';
-import { CATEGORIES } from '../data/dummy-data';
-import CategoryGridTile from '../components/CategoryGridTile';
+import { CITIES } from '../data/dummy-data';
+import CityGridTile from '../components/CityGridTile';
 
 const CitiesScreen = props => {
   const renderGridItem = itemData => {
     return (
-      <CategoryGridTile
+      <CityGridTile
         title={itemData.item.title}
         color={itemData.item.color}
         onSelect={() => {
           props.navigation.navigate({
             routeName: 'Places',
             params: {
-              categoryId: itemData.item.id
+              cityId: itemData.item.id
             }
           });
         }}
@@ -27,7 +27,7 @@ const CitiesScreen = props => {
   return (
     <FlatList
       keyExtractor={(item) => item.id}
-      data={CATEGORIES}
+      data={CITIES}
       renderItem={renderGridItem}
       numColumns={2}
     />
@@ -36,7 +36,7 @@ const CitiesScreen = props => {
 
 CitiesScreen.navigationOptions = navData => {
   return {
-    headerTitle: 'City Categories',
+    headerTitle: 'Cities',
     headerLeft: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item

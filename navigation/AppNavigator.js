@@ -41,7 +41,7 @@ const PlacesNavigator = createStackNavigator(
     PlaceDetail: PlaceDetailScreen
   },
   {
-    // initialRouteName: 'Categories',
+    // initialRouteName: 'Cities',
     defaultNavigationOptions: defaultStackNavOptions
   }
 );
@@ -52,7 +52,7 @@ const FavNavigator = createStackNavigator(
     PlaceDetail: PlaceDetailScreen
   },
   {
-    // initialRouteName: 'Categories',
+    // initialRouteName: 'Cities',
     defaultNavigationOptions: defaultStackNavOptions
   }
 );
