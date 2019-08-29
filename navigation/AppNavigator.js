@@ -38,7 +38,7 @@ const PlacesNavigator = createStackNavigator(
     Places: {
       screen: PlacesScreen
     },
-    MealDetail: PlaceDetailScreen
+    PlaceDetail: PlaceDetailScreen
   },
   {
     // initialRouteName: 'Categories',

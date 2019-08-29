@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  TouchableOpacity
-} from 'react-native';
+import { FlatList } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import HeaderButton from '../components/HeaderButton';
@@ -20,7 +14,7 @@ const CitiesScreen = props => {
         color={itemData.item.color}
         onSelect={() => {
           props.navigation.navigate({
-            routeName: 'CategoryMeals',
+            routeName: 'Places',
             params: {
               categoryId: itemData.item.id
             }
@@ -32,7 +26,7 @@ const CitiesScreen = props => {
 
   return (
     <FlatList
-      keyExtractor={(item, index) => item.id}
+      keyExtractor={(item) => item.id}
       data={CATEGORIES}
       renderItem={renderGridItem}
       numColumns={2}
@@ -56,13 +50,5 @@ CitiesScreen.navigationOptions = navData => {
     )
   };
 };
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
 
 export default CitiesScreen;

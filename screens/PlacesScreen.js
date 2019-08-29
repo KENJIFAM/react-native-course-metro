@@ -1,20 +1,20 @@
 import React from 'react';
 
-import { CATEGORIES, MEALS } from '../data/dummy-data';
+import { CATEGORIES, PLACES } from '../data/dummy-data';
 import MealList from '../components/MealList';
 
-const CategoryMealScreen = props => {
+const PlacesScreen = props => {
   
   const catId = props.navigation.getParam('categoryId');
 
-  const displayedMeals = MEALS.filter(
+  const displayedPlaces = PLACES.filter(
     meal => meal.categoryIds.indexOf(catId) >= 0
   );
 
-  return <MealList listData={displayedMeals} navigation={props.navigation} />;
+  return <MealList listData={displayedPlaces} navigation={props.navigation} />;
 };
 
-CategoryMealScreen.navigationOptions = navigationData => {
+PlacesScreen.navigationOptions = navigationData => {
   const catId = navigationData.navigation.getParam('categoryId');
 
   const selectedCategory = CATEGORIES.find(cat => cat.id === catId);
@@ -24,4 +24,4 @@ CategoryMealScreen.navigationOptions = navigationData => {
   };
 };
 
-export default CategoryMealScreen;
+export default PlacesScreen;
