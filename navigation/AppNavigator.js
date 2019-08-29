@@ -9,9 +9,9 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
-import CategoriesScreen from '../screens/CategoriesScreen';
-import CategoryMealsScreen from '../screens/CategoryMealsScreen';
-import MealDetailScreen from '../screens/MealDetailScreen';
+import CitiesScreen from '../screens/CitiesScreen';
+import PlacesScreen from '../screens/PlacesScreen';
+import PlaceDetailScreen from '../screens/PlaceDetailScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import FiltersScreen from '../screens/FiltersScreen';
 import Colors from '../constants/Colors';
@@ -30,15 +30,15 @@ const defaultStackNavOptions = {
   headerTitle: 'A Screen'
 };
 
-const MealsNavigator = createStackNavigator(
+const PlacesNavigator = createStackNavigator(
   {
-    Categories: {
-      screen: CategoriesScreen
+    Cities: {
+      screen: CitiesScreen
     },
-    CategoryMeals: {
-      screen: CategoryMealsScreen
+    Places: {
+      screen: PlacesScreen
     },
-    MealDetail: MealDetailScreen
+    MealDetail: PlaceDetailScreen
   },
   {
     // initialRouteName: 'Categories',
@@ -49,7 +49,7 @@ const MealsNavigator = createStackNavigator(
 const FavNavigator = createStackNavigator(
   {
     Favorites: FavoritesScreen,
-    MealDetail: MealDetailScreen
+    PlaceDetail: PlaceDetailScreen
   },
   {
     // initialRouteName: 'Categories',
@@ -58,8 +58,8 @@ const FavNavigator = createStackNavigator(
 );
 
 const tabScreenConfig = {
-  Meals: {
-    screen: MealsNavigator,
+  Places: {
+    screen: PlacesNavigator,
     navigationOptions: {
       tabBarIcon: tabInfo => {
         return (
@@ -69,9 +69,9 @@ const tabScreenConfig = {
       tabBarColor: Colors.primaryColor,
       tabBarLabel:
         Platform.OS === 'android' ? (
-          <Text style={{ fontFamily: 'open-sans-bold' }}>Meals</Text>
+          <Text style={{ fontFamily: 'open-sans-bold' }}>Places</Text>
         ) : (
-          'Meals'
+          'Places'
         )
     }
   },
@@ -92,7 +92,7 @@ const tabScreenConfig = {
   }
 };
 
-const MealsFavTabNavigator =
+const PlacesFavTabNavigator =
   Platform.OS === 'android'
     ? createMaterialBottomTabNavigator(tabScreenConfig, {
         activeTintColor: 'white',
@@ -124,10 +124,10 @@ const FiltersNavigator = createStackNavigator(
 
 const MainNavigator = createDrawerNavigator(
   {
-    MealsFavs: {
-      screen: MealsFavTabNavigator,
+    PlacesFavs: {
+      screen: PlacesFavTabNavigator,
       navigationOptions: {
-        drawerLabel: 'Meals'
+        drawerLabel: 'Places'
       }
     },
     Filters: FiltersNavigator

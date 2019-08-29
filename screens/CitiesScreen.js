@@ -12,7 +12,7 @@ import HeaderButton from '../components/HeaderButton';
 import { CATEGORIES } from '../data/dummy-data';
 import CategoryGridTile from '../components/CategoryGridTile';
 
-const CategoriesScreen = props => {
+const CitiesScreen = props => {
   const renderGridItem = itemData => {
     return (
       <CategoryGridTile
@@ -40,9 +40,9 @@ const CategoriesScreen = props => {
   );
 };
 
-CategoriesScreen.navigationOptions = navData => {
+CitiesScreen.navigationOptions = navData => {
   return {
-    headerTitle: 'Meal Categories',
+    headerTitle: 'City Categories',
     headerLeft: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
@@ -65,4 +65,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CategoriesScreen;
+export default CitiesScreen;
