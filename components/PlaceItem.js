@@ -16,7 +16,7 @@ const PlaceItem = props => {
         <View>
           <View style={{ ...styles.placeRow, ...styles.placeHeader }}>
             <ImageBackground
-              source={{ uri: props.image }}
+              source={{ uri: props.imageUrl }}
               style={styles.bgImage}
             >
               <View style={styles.titleContainer}>
@@ -27,9 +27,9 @@ const PlaceItem = props => {
             </ImageBackground>
           </View>
           <View style={{ ...styles.placeRow, ...styles.placeDetail }}>
-            <DefaultText>{props.duration}m</DefaultText>
-            <DefaultText>{props.complexity.toUpperCase()}</DefaultText>
-            <DefaultText>{props.affordability.toUpperCase()}</DefaultText>
+            <DefaultText>{props.averageVisitDuration}m</DefaultText>
+            <DefaultText>{props.averageVisitDuration}</DefaultText>
+            <DefaultText>{props.averageVisitDuration}</DefaultText>
           </View>
         </View>
       </TouchableOpacity>

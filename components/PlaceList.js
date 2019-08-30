@@ -9,9 +9,7 @@ const PlaceList = props => {
       <PlaceItem
         title={itemData.item.title}
         image={itemData.item.imageUrl}
-        duration={itemData.item.duration}
-        complexity={itemData.item.complexity}
-        affordability={itemData.item.affordability}
+        averageVisitDuration={itemData.item.averageVisitDuration}
         onSelectPlace={() => {
           props.navigation.navigate({
             routeName: 'PlaceDetail',
