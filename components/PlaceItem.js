@@ -27,9 +27,7 @@ const PlaceItem = props => {
             </ImageBackground>
           </View>
           <View style={{ ...styles.placeRow, ...styles.placeDetail }}>
-            <DefaultText>{props.averageVisitDuration}m</DefaultText>
-            <DefaultText>{props.averageVisitDuration}</DefaultText>
-            <DefaultText>{props.averageVisitDuration}</DefaultText>
+            <DefaultText>Average visit duration: {props.averageVisitDuration}m</DefaultText>
           </View>
         </View>
       </TouchableOpacity>
