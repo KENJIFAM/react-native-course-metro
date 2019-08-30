@@ -4,12 +4,11 @@ import {
   View,
   Image,
   Text,
-  Button,
   StyleSheet
 } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
-import { MEALS } from '../data/dummy-data';
+import { PLACES } from '../data/dummy-data';
 import HeaderButton from '../components/HeaderButton';
 import DefaultText from '../components/DefaultText';
 
@@ -21,36 +20,30 @@ const ListItem = props => {
   );
 };
 
-const MealDetailScreen = props => {
-  const mealId = props.navigation.getParam('mealId');
+const PlaceDetailScreen = props => {
+  const placeId = props.navigation.getParam('placeId');
 
-  const selectedMeal = MEALS.find(meal => meal.id === mealId);
+  const selectedPlace = PLACES.find(place => place.id === placeId);
 
   return (
     <ScrollView>
-      <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
+      <Image source={{ uri: selectedPlace.imageUrl }} style={styles.image} />
       <View style={styles.details}>
-        <DefaultText>{selectedMeal.duration}m</DefaultText>
-        <DefaultText>{selectedMeal.complexity.toUpperCase()}</DefaultText>
-        <DefaultText>{selectedMeal.affordability.toUpperCase()}</DefaultText>
+        <DefaultText>{selectedPlace.averageVisitDuration}m</DefaultText>
+        <DefaultText>{selectedPlace.averageVisitDuration}</DefaultText>
+        <DefaultText>{selectedPlace.averageVisitDuration}</DefaultText>
       </View>
-      <Text style={styles.title}>Ingredients</Text>
-      {selectedMeal.ingredients.map(ingredient => (
-        <ListItem key={ingredient}>{ingredient}</ListItem>
-      ))}
-      <Text style={styles.title}>Steps</Text>
-      {selectedMeal.steps.map(step => (
-        <ListItem key={step}>{step}</ListItem>
-      ))}
+      <Text style={styles.title}>Description</Text>
+      <Text>{selectedPlace.description}</Text>
     </ScrollView>
   );
 };
 
-MealDetailScreen.navigationOptions = navigationData => {
-  const mealId = navigationData.navigation.getParam('mealId');
-  const selectedMeal = MEALS.find(meal => meal.id === mealId);
+PlaceDetailScreen.navigationOptions = navigationData => {
+  const placeId = navigationData.navigation.getParam('placeId');
+  const selectedPlace = PLACES.find(place => place.id === placeId);
   return {
-    headerTitle: selectedMeal.title,
+    headerTitle: selectedPlace.title,
     headerRight: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
@@ -89,4 +82,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MealDetailScreen;
+export default PlaceDetailScreen;

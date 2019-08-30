@@ -9,12 +9,12 @@ import {
 
 import DefaultText from './DefaultText';
 
-const MealItem = props => {
+const PlaceItem = props => {
   return (
-    <View style={styles.mealItem}>
-      <TouchableOpacity onPress={props.onSelectMeal}>
+    <View style={styles.placeItem}>
+      <TouchableOpacity onPress={props.onSelectPlace}>
         <View>
-          <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
+          <View style={{ ...styles.placeRow, ...styles.placeHeader }}>
             <ImageBackground
               source={{ uri: props.image }}
               style={styles.bgImage}
@@ -26,7 +26,7 @@ const MealItem = props => {
               </View>
             </ImageBackground>
           </View>
-          <View style={{ ...styles.mealRow, ...styles.mealDetail }}>
+          <View style={{ ...styles.placeRow, ...styles.placeDetail }}>
             <DefaultText>{props.duration}m</DefaultText>
             <DefaultText>{props.complexity.toUpperCase()}</DefaultText>
             <DefaultText>{props.affordability.toUpperCase()}</DefaultText>
@@ -38,7 +38,7 @@ const MealItem = props => {
 };
 
 const styles = StyleSheet.create({
-  mealItem: {
+  placeItem: {
     height: 200,
     width: '100%',
     backgroundColor: '#f5f5f5',
@@ -51,13 +51,13 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'flex-end',
   },
-  mealRow: {
+  placeRow: {
     flexDirection: 'row'
   },
-  mealHeader: {
+  placeHeader: {
     height: '85%'
   },
-  mealDetail: {
+  placeDetail: {
     paddingHorizontal: 10,
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -76,4 +76,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MealItem;
+export default PlaceItem;

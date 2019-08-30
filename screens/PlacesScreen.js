@@ -1,26 +1,26 @@
 import React from 'react';
 
-import { CATEGORIES, PLACES } from '../data/dummy-data';
-import MealList from '../components/MealList';
+import { CITIES, PLACES } from '../data/dummy-data';
+import PlaceList from '../components/PlaceList';
 
 const PlacesScreen = props => {
   
-  const catId = props.navigation.getParam('categoryId');
+  const cityId = props.navigation.getParam('cityId');
 
   const displayedPlaces = PLACES.filter(
-    meal => meal.categoryIds.indexOf(catId) >= 0
+    place => place.cityId === cityId
   );
 
-  return <MealList listData={displayedPlaces} navigation={props.navigation} />;
+  return <PlaceList listData={displayedPlaces} navigation={props.navigation} />;
 };
 
 PlacesScreen.navigationOptions = navigationData => {
-  const catId = navigationData.navigation.getParam('categoryId');
+  const cityId = navigationData.navigation.getParam('cityId');
 
-  const selectedCategory = CATEGORIES.find(cat => cat.id === catId);
+  const selectedCity = CITIES.find(city => city.id === cityId);
 
   return {
-    headerTitle: selectedCategory.title
+    headerTitle: selectedCity.title
   };
 };
 

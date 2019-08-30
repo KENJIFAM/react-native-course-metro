@@ -22,21 +22,25 @@ const FilterSwitch = props => {
 const FiltersScreen = props => {
   const { navigation } = props;
 
-  const [isGlutenFree, setIsGlutenFree] = useState(false);
-  const [isLactoseFree, setIsLactoseFree] = useState(false);
-  const [isVegan, setIsVegan] = useState(false);
-  const [isVegetarian, setIsVegetarian] = useState(false);
+  const [isReligious, setIsReligious] = useState(false);
+  const [isNatural, setIsNatural] = useState(false);
+  const [isMuseum, setIsMuseum] = useState(false);
+  const [isPalace, setIsPalace] = useState(false);
+  const [isSquare, setIsSquare] = useState(false);
+  const [isLandmark, setIsLandmark] = useState(false);
 
   const saveFilters = useCallback(() => {
     const appliedFilters = {
-      glutenFree: isGlutenFree,
-      lactoseFree: isLactoseFree,
-      vegan: isVegan,
-      isVegetarian: isVegetarian
+      religious: isReligious,
+      natural: isNatural,
+      museum: isMuseum,
+      palace: isPalace,
+      square: isSquare,
+      landmark: isLandmark
     };
 
     console.log(appliedFilters);
-  }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]);
+  }, [isReligious, isNatural, isMuseum, isPalace, isSquare, isLandmark]);
 
   useEffect(() => {
     navigation.setParams({ save: saveFilters });
@@ -46,24 +50,34 @@ const FiltersScreen = props => {
     <View style={styles.screen}>
       <Text style={styles.title}>Available Filters / Restrictions</Text>
       <FilterSwitch
-        label="Gluten-free"
-        state={isGlutenFree}
-        onChange={newValue => setIsGlutenFree(newValue)}
+        label="Religious"
+        state={isReligious}
+        onChange={newValue => setIsReligious(newValue)}
       />
       <FilterSwitch
-        label="Lactose-free"
-        state={isLactoseFree}
-        onChange={newValue => setIsLactoseFree(newValue)}
+        label="Natural"
+        state={isNatural}
+        onChange={newValue => setIsNatural(newValue)}
       />
       <FilterSwitch
-        label="Vegan"
-        state={isVegan}
-        onChange={newValue => setIsVegan(newValue)}
+        label="Museum"
+        state={isMuseum}
+        onChange={newValue => setIsMuseum(newValue)}
       />
       <FilterSwitch
-        label="Vegetarian"
-        state={isVegetarian}
-        onChange={newValue => setIsVegetarian(newValue)}
+        label="Palace"
+        state={isPalace}
+        onChange={newValue => setIsPalace(newValue)}
+      />
+      <FilterSwitch
+        label="Square"
+        state={isSquare}
+        onChange={newValue => setIsSquare(newValue)}
+      />
+      <FilterSwitch
+        label="Landmark"
+        state={isLandmark}
+        onChange={newValue => setIsLandmark(newValue)}
       />
     </View>
   );
@@ -71,7 +85,7 @@ const FiltersScreen = props => {
 
 FiltersScreen.navigationOptions = navData => {
   return {
-    headerTitle: 'Filter Meals',
+    headerTitle: 'Filter Places',
     headerLeft: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
