@@ -12,13 +12,6 @@ import { PLACES } from '../data/dummy-data';
 import HeaderButton from '../components/HeaderButton';
 import DefaultText from '../components/DefaultText';
 
-const ListItem = props => {
-  return (
-    <View style={styles.listItem}>
-      <DefaultText>{props.children}</DefaultText>
-    </View>
-  );
-};
 
 const PlaceDetailScreen = props => {
   const placeId = props.navigation.getParam('placeId');
@@ -29,9 +22,7 @@ const PlaceDetailScreen = props => {
     <ScrollView>
       <Image source={{ uri: selectedPlace.imageUrl }} style={styles.image} />
       <View style={styles.details}>
-        <DefaultText>{selectedPlace.averageVisitDuration}m</DefaultText>
-        <DefaultText>{selectedPlace.averageVisitDuration}</DefaultText>
-        <DefaultText>{selectedPlace.averageVisitDuration}</DefaultText>
+        <DefaultText>Average visit duration: {selectedPlace.averageVisitDuration}m</DefaultText>
       </View>
       <Text style={styles.title}>Description</Text>
       <Text>{selectedPlace.description}</Text>
